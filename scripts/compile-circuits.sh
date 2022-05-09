@@ -5,11 +5,11 @@
 cd circuits
 mkdir -p build
 
-if [ -f ./powersOfTau28_hez_final_16.ptau ]; then
-    echo "powersOfTau28_hez_final_16.ptau already exists. Skipping."
+if [ -f ./powersOfTau28_hez_final_17.ptau ]; then
+    echo "powersOfTau28_hez_final_17.ptau already exists. Skipping."
 else
-    echo 'Downloading powersOfTau28_hez_final_16.ptau'
-    wget https://hermez.s3-eu-west-1.amazonaws.com/powersOfTau28_hez_final_16.ptau
+    echo 'Downloading powersOfTau28_hez_final_17.ptau'
+    wget https://hermez.s3-eu-west-1.amazonaws.com/powersOfTau28_hez_final_17.ptau
 fi
 
 echo "Compiling: sudoku..."
@@ -30,7 +30,7 @@ fi
 if [ -f ./build/sudoku/verification_key.json ]; then
     echo "verification_key.json already exists. Skipping."
 else
-    snarkjs plonk setup build/sudoku.r1cs powersOfTau28_hez_final_16.ptau build/sudoku/circuit_final.zkey #circuit_0000.zkey
+    snarkjs plonk setup build/sudoku.r1cs powersOfTau28_hez_final_17.ptau build/sudoku/circuit_final.zkey #circuit_0000.zkey
     #snarkjs zkey contribute build/sudoku/circuit_0000.zkey build/sudoku/circuit_final.zkey --name="1st Contributor Name" -v -e="random text"
     snarkjs zkey export verificationkey build/sudoku/circuit_final.zkey build/sudoku/verification_key.json
 fi

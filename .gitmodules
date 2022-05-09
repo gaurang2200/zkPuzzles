@@ -1,0 +1,3 @@
+[submodule "zkPuzzles"]
+	path = zkPuzzles
+	url = https://github.com/gaurang2200/zkPuzzles.git
